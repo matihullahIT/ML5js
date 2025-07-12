@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // all your code here
   
 const data = [
   { "name": "Person1", "weight_in_kilos": 55, "height_in_cm": 160, "bmi": 21.48 },
