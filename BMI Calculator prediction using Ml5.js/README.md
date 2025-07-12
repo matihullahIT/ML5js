@@ -16,6 +16,8 @@ This project is a BMI predictor that uses a neural network to predict the BMI of
 *   [ml5.js](https://ml5js.org/)
 *   [Tailwind CSS](https://tailwindcss.com/)
 
+#Banner 
+[Github Banner - Made with Clipchamp.gif]
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
