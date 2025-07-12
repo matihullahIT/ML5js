@@ -22,6 +22,7 @@ const data = [
   { "name": "Person18", "weight_in_kilos": 100, "height_in_cm": 175, "bmi": 32.65 },
   { "name": "Person19", "weight_in_kilos": 105, "height_in_cm": 175, "bmi": 34.29 },
   { "name": "Person20", "weight_in_kilos": 110, "height_in_cm": 175, "bmi": 35.92 }
+  { "name": "Person20", "weight_in_kilos": 115, "height_in_cm": 175, "bmi": 35.92 }
 ];
 
 
