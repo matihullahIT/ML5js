@@ -5,12 +5,11 @@ const fs = require("fs");
 const rawData = fs.readFileSync("./dataset.json", "utf-8");
 const data = JSON.parse(rawData);
 
-// Determine max values for normalization
-const maxSize = Math.max(...data.map(d => d.size));
-const maxBedrooms = Math.max(...data.map(d => d.bedrooms));
-const maxAge = Math.max(...data.map(d => d.age));
-const maxPrice = Math.max(...data.map(d => d.price));
-
+  // Determine max values for normalization
+  const maxSize = Math.max(...data.map(d => d.size));
+  const maxBedrooms = Math.max(...data.map(d => d.bedrooms));
+  const maxAge = Math.max(...data.map(d => d.age));
+  const maxPrice = Math.max(...data.map(d => d.price)); 
 // Prepare training data
 const trainingData = data.map(d => ({
   input: {
@@ -27,7 +26,7 @@ const trainingData = data.map(d => ({
 const net = new brain.NeuralNetwork();
 net.train(trainingData,{
   iterations: 200,
-  errorThresh: 0.005,
+  errorThresh: 0.0001,
   log: true,
   logPeriod: 10,
   learningRate: 0.3
@@ -44,3 +43,11 @@ const prediction = net.run(testInput);
 // Convert back to actual price
 const predictedPrice = prediction.price * maxPrice;
 console.log("Predicted price:", Math.round(predictedPrice));
+
+const savemodle=net.toJSON();
+function saveModle(savemodle){
+    fs.writeFileSync("training_modle.json",JSON.stringify(savemodle));
+    console.log("modle saved")    
+
+}
+saveModle(savemodle);
