@@ -25,9 +25,12 @@ const trainingData = data.map(d => ({
 
 // Create and train network
 const net = new brain.NeuralNetwork();
-net.train(trainingData, {
-  iterations: 2000,
-  log: true
+net.train(trainingData,{
+  iterations: 200,
+  errorThresh: 0.005,
+  log: true,
+  logPeriod: 10,
+  learningRate: 0.3
 });
 
 // Test prediction
